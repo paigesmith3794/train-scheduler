@@ -24,6 +24,7 @@
     <div class="jumbotron jumbotron-fluid">
         <div class="container">
             <h1 class="display-4" style="text-align: center">Train Schedule</h1>
+            <h5>Today is <span id="current-status"></span></h5>
         </div>
     </div>
 
@@ -32,7 +33,7 @@
             Current Train Schedule
         </div>
 
-        <table class="table">
+        <table class="table" id='train-table'>
             <thead class="thead-light">
                 <tr>
                     <th scope="col">Train Name</th>
@@ -42,30 +43,11 @@
                     <th scope="col">Minutes Away</th>
                 </tr>
             </thead>
-            <tbody>
-                <tr>
-                    <th scope="row">1</th>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
-                    <td>5 minutes</td>
-                </tr>
-                <tr>
-                    <th scope="row">2</th>
-                    <td>Jacob</td>
-                    <td>Thornton</td>
-                    <td>@fat</td>
-                    <td>@fat</td>
-                </tr>
-                <tr>
-                    <th scope="row">3</th>
-                    <td>Larry</td>
-                    <td>the Bird</td>
-                    <td>@twitter</td>
-                    <td>@twitter</td>
-                </tr>
+            <tbody id="new-train">
+
             </tbody>
-        </table><br>
+        </table>
+        <br>
 
         <div class="card">
             <div class="card-header">
@@ -75,51 +57,34 @@
             <form>
 
                 <div class="form-group" style="margin-left: 20px; margin-right: 20px">
-                    <label for=" exampleFormControlInput1">Train Name</label>
-                    <input type="email" class="form-control" id="exampleFormControlInput1"
-                        placeholder="name@example.com">
+                    <label for="train-name">Train Name</label>
+                    <input type="text" class="form-control" id="train-name" placeholder="Train Name">
                 </div>
                 <div class="form-group" style="margin-left: 20px; margin-right: 20px;">
-                    <label for=" exampleFormControlInput1">Destination</label>
-                    <input type="email" class="form-control" id="exampleFormControlInput1"
-                        placeholder="name@example.com">
+                    <label for="destination">Destination</label>
+                    <input type="text" class="form-control" id="destination" placeholder="Destination">
                 </div>
                 <div class="form-group" style="margin-left: 20px; margin-right: 20px;">
-                    <label for=" exampleFormControlInput1">First Train Time (HH:mm - military time)</label>
-                    <input type="email" class="form-control" id="exampleFormControlInput1"
-                        placeholder="name@example.com">
+                    <label for="first-train-time">First Train Time (HH:mm - military time)</label>
+                    <input type="text" class="form-control" id="first-train-time" placeholder="Train Time">
                 </div>
                 <div class="form-group" style="margin-left: 20px; margin-right: 20px;">
-                    <label for=" exampleFormControlInput1">Frequency (min)</label>
-                    <input type="email" class="form-control" id="exampleFormControlInput1"
-                        placeholder="name@example.com">
+                    <label for="frequency">Frequency (min)</label>
+                    <input type="text" class="form-control" id="frequency" placeholder="Frequency">
                 </div>
-                <button type="submit" class="btn btn-primary"
+                <button id="add-train" type="submit" class="btn btn-primary"
                     style="margin-bottom: 10px; margin-left: 20px;">Submit</button>
 
             </form>
 
             <script src="https://www.gstatic.com/firebasejs/5.10.0/firebase.js"></script>
 
-            <script>
-                // Initialize Firebase
-                var config = {
-                    apiKey: "AIzaSyDKs9sl3n3XvxWEPC-ey6mLlH-uMDY_TFU",
-                    authDomain: "train-schedule-42119.firebaseapp.com",
-                    databaseURL: "https://train-schedule-42119.firebaseio.com",
-                    projectId: "train-schedule-42119",
-                    storageBucket: "train-schedule-42119.appspot.com",
-                    messagingSenderId: "64866460888"
-                };
-                firebase.initializeApp(config);
-            </script>
-
             <!-- Optional JavaScript -->
             <!-- jQuery first, JS, then Popper.js, then Bootstrap JS -->
             <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
                 integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
                 crossorigin="anonymous"></script>
-            <script type="text/javascript" src="assets/javascript/app.js"></script>
+            <script type="text/javascript" src="assets/js/app.js"></script>
             <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
                 integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
                 crossorigin="anonymous"></script>
